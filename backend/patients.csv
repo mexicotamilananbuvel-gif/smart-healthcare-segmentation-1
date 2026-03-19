@@ -1,0 +1,160 @@
+﻿Patient_ID;Record_Date;Age;Gender;Primary_Condition;Severity_Score;Treatment_Urgency;Vital_Risk_Score;Comorbidity_Count;Recent_Admissions_Last_6M;Medication_Adherence;Last_Visit_Days_Ago;Insurance_Type;Care_Plan_Assigned;Doctor_Assigned;Follow_Up_Required;Readmission_Risk;Region;Hospital_Branch;Appointment_Status;Lab_Test_Pending;Bed_Required;ICU_Required;Discharge_Priority;Priority_Group
+P001;12/03/2026;72;F;Heart Failure;8;9;8;3;2;66;11;Private;Yes;Dr. Smith;Yes;High;North;Central Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P001;13/03/2026;72;F;Heart Failure;8;9;8;3;2;66;10;Private;Yes;Dr. Smith;Yes;High;North;Central Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P001;14/03/2026;72;F;Heart Failure;9;10;9;3;2;67;9;Private;Yes;Dr. Smith;Yes;High;North;Central Hospital;In Progress;Yes;Yes;Yes;Low;Critical
+P001;15/03/2026;72;F;Heart Failure;9;10;9;3;2;67;8;Private;Yes;Dr. Smith;Yes;High;North;Central Hospital;In Progress;Yes;Yes;Yes;Low;Critical
+P001;16/03/2026;72;F;Heart Failure;9;10;9;3;2;68;7;Private;Yes;Dr. Smith;Yes;High;North;Central Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P001;17/03/2026;72;F;Heart Failure;9;10;9;3;2;68;6;Private;Yes;Dr. Smith;Yes;High;North;Central Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P001;18/03/2026;72;F;Heart Failure;9;10;9;3;2;68;5;Private;Yes;Dr. Smith;Yes;High;North;Central Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P002;12/03/2026;58;M;Diabetes;5;6;5;2;1;72;20;Government;Yes;Dr. Lee;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P002;13/03/2026;58;M;Diabetes;5;6;5;2;1;72;19;Government;Yes;Dr. Lee;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P002;14/03/2026;58;M;Diabetes;6;7;5;2;1;73;18;Government;Yes;Dr. Lee;Yes;Medium;South;West Clinic;In Progress;Yes;No;No;Medium;Moderate
+P002;15/03/2026;58;M;Diabetes;6;7;5;2;1;73;17;Government;Yes;Dr. Lee;Yes;Medium;South;West Clinic;In Progress;Yes;No;No;Medium;Moderate
+P002;16/03/2026;58;M;Diabetes;6;7;5;2;1;74;16;Government;Yes;Dr. Lee;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P002;17/03/2026;58;M;Diabetes;6;7;5;2;1;74;15;Government;Yes;Dr. Lee;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P002;18/03/2026;58;M;Diabetes;6;7;5;2;1;74;14;Government;Yes;Dr. Lee;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P003;12/03/2026;34;F;Asthma;3;3;2;0;0;90;36;Private;No;Dr. Patel;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P003;13/03/2026;34;F;Asthma;3;3;2;0;0;90;35;Private;No;Dr. Patel;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P003;14/03/2026;34;F;Asthma;3;3;2;0;0;91;34;Private;No;Dr. Patel;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P003;15/03/2026;34;F;Asthma;3;3;2;0;0;91;33;Private;No;Dr. Patel;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P003;16/03/2026;34;F;Asthma;3;3;2;0;0;91;32;Private;No;Dr. Patel;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P003;17/03/2026;34;F;Asthma;3;3;2;0;0;91;31;Private;No;Dr. Patel;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P003;18/03/2026;34;F;Asthma;3;3;2;0;0;91;30;Private;No;Dr. Patel;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P004;12/03/2026;81;M;Chronic Kidney Disease;8;9;8;4;3;59;9;Government;Yes;Dr. Brown;Yes;High;North;Central Hospital;Admitted;Yes;Yes;No;Low;Critical
+P004;13/03/2026;81;M;Chronic Kidney Disease;8;9;8;4;3;59;8;Government;Yes;Dr. Brown;Yes;High;North;Central Hospital;Admitted;Yes;Yes;No;Low;Critical
+P004;14/03/2026;81;M;Chronic Kidney Disease;8;9;8;4;3;60;7;Government;Yes;Dr. Brown;Yes;High;North;Central Hospital;In Progress;Yes;Yes;No;Low;Critical
+P004;15/03/2026;81;M;Chronic Kidney Disease;8;9;8;4;3;60;6;Government;Yes;Dr. Brown;Yes;High;North;Central Hospital;In Progress;Yes;Yes;No;Low;Critical
+P004;16/03/2026;81;M;Chronic Kidney Disease;8;9;8;4;3;61;5;Government;Yes;Dr. Brown;Yes;High;North;Central Hospital;Admitted;Yes;Yes;No;Low;Critical
+P004;17/03/2026;81;M;Chronic Kidney Disease;8;9;8;4;3;61;4;Government;Yes;Dr. Brown;Yes;High;North;Central Hospital;Admitted;Yes;Yes;No;Low;Critical
+P004;18/03/2026;81;M;Chronic Kidney Disease;8;9;8;4;3;61;3;Government;Yes;Dr. Brown;Yes;High;North;Central Hospital;Admitted;Yes;Yes;No;Low;Critical
+P005;12/03/2026;45;F;Hypertension;4;4;3;1;0;86;31;Private;No;Dr. Garcia;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P005;13/03/2026;45;F;Hypertension;4;4;3;1;0;86;30;Private;No;Dr. Garcia;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P005;14/03/2026;45;F;Hypertension;4;4;3;1;0;87;29;Private;No;Dr. Garcia;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P005;15/03/2026;45;F;Hypertension;4;4;3;1;0;87;28;Private;No;Dr. Garcia;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P005;16/03/2026;45;F;Hypertension;4;4;3;1;0;88;27;Private;No;Dr. Garcia;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P005;17/03/2026;45;F;Hypertension;4;4;3;1;0;88;26;Private;No;Dr. Garcia;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P005;18/03/2026;45;F;Hypertension;4;4;3;1;0;88;25;Private;No;Dr. Garcia;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P006;12/03/2026;66;M;COPD;7;8;7;3;2;68;13;Insurance;Yes;Dr. Wilson;Yes;High;South;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P006;13/03/2026;66;M;COPD;7;8;7;3;2;68;12;Insurance;Yes;Dr. Wilson;Yes;High;South;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P006;14/03/2026;66;M;COPD;7;8;7;3;2;69;11;Insurance;Yes;Dr. Wilson;Yes;High;South;General Hospital;In Progress;Yes;Yes;Yes;Low;Critical
+P006;15/03/2026;66;M;COPD;7;8;7;3;2;69;10;Insurance;Yes;Dr. Wilson;Yes;High;South;General Hospital;In Progress;Yes;Yes;Yes;Low;Critical
+P006;16/03/2026;66;M;COPD;7;8;7;3;2;70;9;Insurance;Yes;Dr. Wilson;Yes;High;South;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P006;17/03/2026;66;M;COPD;7;8;7;3;2;70;8;Insurance;Yes;Dr. Wilson;Yes;High;South;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P006;18/03/2026;66;M;COPD;7;8;7;3;2;70;7;Insurance;Yes;Dr. Wilson;Yes;High;South;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P007;12/03/2026;29;F;Migraine;2;2;1;0;0;93;46;Self-Pay;No;Dr. Adams;No;Low;East;East Medical Center;Cancelled;No;No;No;High;Stable
+P007;13/03/2026;29;F;Migraine;2;2;1;0;0;93;45;Self-Pay;No;Dr. Adams;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P007;14/03/2026;29;F;Migraine;2;2;1;0;0;94;44;Self-Pay;No;Dr. Adams;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P007;15/03/2026;29;F;Migraine;2;2;1;0;0;94;43;Self-Pay;No;Dr. Adams;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P007;16/03/2026;29;F;Migraine;2;2;1;0;0;95;42;Self-Pay;No;Dr. Adams;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P007;17/03/2026;29;F;Migraine;2;2;1;0;0;95;41;Self-Pay;No;Dr. Adams;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P007;18/03/2026;29;F;Migraine;2;2;1;0;0;95;40;Self-Pay;No;Dr. Adams;No;Low;East;East Medical Center;Cancelled;No;No;No;High;Stable
+P008;12/03/2026;53;M;Pneumonia;6;7;6;1;1;77;12;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;Scheduled;Yes;Yes;No;Medium;Moderate
+P008;13/03/2026;53;M;Pneumonia;6;7;6;1;1;77;11;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;In Progress;Yes;Yes;No;Medium;Moderate
+P008;14/03/2026;53;M;Pneumonia;7;8;6;1;1;78;10;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;In Progress;Yes;Yes;No;Medium;Moderate
+P008;15/03/2026;53;M;Pneumonia;7;8;6;1;1;78;9;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;Admitted;Yes;Yes;No;Medium;Moderate
+P008;16/03/2026;53;M;Pneumonia;7;8;6;1;1;79;8;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;Admitted;Yes;Yes;No;Medium;Moderate
+P008;17/03/2026;53;M;Pneumonia;7;8;6;1;1;79;7;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;In Progress;Yes;Yes;No;Medium;Moderate
+P008;18/03/2026;53;M;Pneumonia;7;8;6;1;1;79;6;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;In Progress;Yes;Yes;No;Medium;Moderate
+P009;12/03/2026;77;F;Stroke Recovery;8;9;8;3;2;63;10;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P009;13/03/2026;77;F;Stroke Recovery;8;9;8;3;2;63;9;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P009;14/03/2026;77;F;Stroke Recovery;8;9;8;3;2;64;8;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;In Progress;Yes;Yes;Yes;Low;Critical
+P009;15/03/2026;77;F;Stroke Recovery;8;9;8;3;2;64;7;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;In Progress;Yes;Yes;Yes;Low;Critical
+P009;16/03/2026;77;F;Stroke Recovery;8;9;8;3;2;65;6;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P009;17/03/2026;77;F;Stroke Recovery;8;9;8;3;2;65;5;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P009;18/03/2026;77;F;Stroke Recovery;8;9;8;3;2;65;4;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;Yes;Low;Critical
+P010;12/03/2026;39;M;Anemia;4;5;4;1;0;83;24;Insurance;No;Dr. Patel;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P010;13/03/2026;39;M;Anemia;4;5;4;1;0;83;23;Insurance;No;Dr. Patel;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P010;14/03/2026;39;M;Anemia;4;5;4;1;0;84;22;Insurance;No;Dr. Patel;Yes;Medium;South;West Clinic;In Progress;Yes;No;No;Medium;Moderate
+P010;15/03/2026;39;M;Anemia;4;5;4;1;0;84;21;Insurance;No;Dr. Patel;Yes;Medium;South;West Clinic;In Progress;Yes;No;No;Medium;Moderate
+P010;16/03/2026;39;M;Anemia;4;5;4;1;0;85;20;Insurance;No;Dr. Patel;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P010;17/03/2026;39;M;Anemia;4;5;4;1;0;85;19;Insurance;No;Dr. Patel;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P010;18/03/2026;39;M;Anemia;4;5;4;1;0;85;18;Insurance;No;Dr. Patel;Yes;Medium;South;West Clinic;Scheduled;Yes;No;No;Medium;Moderate
+P011;12/03/2026;62;F;Cancer Therapy;8;9;7;2;2;70;14;Private;Yes;Dr. Brown;Yes;High;North;Oncology Center;In Progress;Yes;Yes;No;Low;Critical
+P011;13/03/2026;62;F;Cancer Therapy;8;9;7;2;2;70;13;Private;Yes;Dr. Brown;Yes;High;North;Oncology Center;In Progress;Yes;Yes;No;Low;Critical
+P011;14/03/2026;62;F;Cancer Therapy;8;9;7;2;2;71;12;Private;Yes;Dr. Brown;Yes;High;North;Oncology Center;Admitted;Yes;Yes;No;Low;Critical
+P011;15/03/2026;62;F;Cancer Therapy;9;9;7;2;2;71;11;Private;Yes;Dr. Brown;Yes;High;North;Oncology Center;Admitted;Yes;Yes;No;Low;Critical
+P011;16/03/2026;62;F;Cancer Therapy;9;9;7;2;2;72;10;Private;Yes;Dr. Brown;Yes;High;North;Oncology Center;In Progress;Yes;Yes;No;Low;Critical
+P011;17/03/2026;62;F;Cancer Therapy;9;9;7;2;2;72;9;Private;Yes;Dr. Brown;Yes;High;North;Oncology Center;In Progress;Yes;Yes;No;Low;Critical
+P011;18/03/2026;62;F;Cancer Therapy;9;9;7;2;2;72;8;Private;Yes;Dr. Brown;Yes;High;North;Oncology Center;In Progress;Yes;Yes;No;Low;Critical
+P012;12/03/2026;50;M;Arthritis;3;3;2;1;0;87;41;Government;No;Dr. Garcia;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P012;13/03/2026;50;M;Arthritis;3;3;2;1;0;87;40;Government;No;Dr. Garcia;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P012;14/03/2026;50;M;Arthritis;3;3;2;1;0;88;39;Government;No;Dr. Garcia;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P012;15/03/2026;50;M;Arthritis;3;3;2;1;0;88;38;Government;No;Dr. Garcia;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P012;16/03/2026;50;M;Arthritis;3;3;2;1;0;89;37;Government;No;Dr. Garcia;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P012;17/03/2026;50;M;Arthritis;3;3;2;1;0;89;36;Government;No;Dr. Garcia;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P012;18/03/2026;50;M;Arthritis;3;3;2;1;0;89;35;Government;No;Dr. Garcia;No;Low;East;East Medical Center;Completed;No;No;No;High;Stable
+P013;12/03/2026;68;F;Coronary Artery Disease;8;8;8;3;1;65;15;Insurance;Yes;Dr. Wilson;Yes;High;West;Cardiac Center;Admitted;Yes;Yes;Yes;Low;Critical
+P013;13/03/2026;68;F;Coronary Artery Disease;8;8;8;3;1;65;14;Insurance;Yes;Dr. Wilson;Yes;High;West;Cardiac Center;Admitted;Yes;Yes;Yes;Low;Critical
+P013;14/03/2026;68;F;Coronary Artery Disease;8;8;8;3;1;66;13;Insurance;Yes;Dr. Wilson;Yes;High;West;Cardiac Center;In Progress;Yes;Yes;Yes;Low;Critical
+P013;15/03/2026;68;F;Coronary Artery Disease;8;8;8;3;1;66;12;Insurance;Yes;Dr. Wilson;Yes;High;West;Cardiac Center;In Progress;Yes;Yes;Yes;Low;Critical
+P013;16/03/2026;68;F;Coronary Artery Disease;8;8;8;3;1;67;11;Insurance;Yes;Dr. Wilson;Yes;High;West;Cardiac Center;Admitted;Yes;Yes;Yes;Low;Critical
+P013;17/03/2026;68;F;Coronary Artery Disease;8;8;8;3;1;67;10;Insurance;Yes;Dr. Wilson;Yes;High;West;Cardiac Center;Admitted;Yes;Yes;Yes;Low;Critical
+P013;18/03/2026;68;F;Coronary Artery Disease;8;8;8;3;1;67;9;Insurance;Yes;Dr. Wilson;Yes;High;West;Cardiac Center;Admitted;Yes;Yes;Yes;Low;Critical
+P014;12/03/2026;41;M;Gastritis;2;3;2;0;0;91;28;Self-Pay;No;Dr. Adams;No;Low;South;West Clinic;Completed;No;No;No;High;Stable
+P014;13/03/2026;41;M;Gastritis;2;3;2;0;0;91;27;Self-Pay;No;Dr. Adams;No;Low;South;West Clinic;Completed;No;No;No;High;Stable
+P014;14/03/2026;41;M;Gastritis;2;3;2;0;0;92;26;Self-Pay;No;Dr. Adams;No;Low;South;West Clinic;Completed;No;No;No;High;Stable
+P014;15/03/2026;41;M;Gastritis;2;3;2;0;0;92;25;Self-Pay;No;Dr. Adams;No;Low;South;West Clinic;Completed;No;No;No;High;Stable
+P014;16/03/2026;41;M;Gastritis;2;3;2;0;0;93;24;Self-Pay;No;Dr. Adams;No;Low;South;West Clinic;Completed;No;No;No;High;Stable
+P014;17/03/2026;41;M;Gastritis;2;3;2;0;0;93;23;Self-Pay;No;Dr. Adams;No;Low;South;West Clinic;Completed;No;No;No;High;Stable
+P014;18/03/2026;41;M;Gastritis;2;3;2;0;0;93;22;Self-Pay;No;Dr. Adams;No;Low;South;West Clinic;Completed;No;No;No;High;Stable
+P015;12/03/2026;74;F;Diabetes;6;6;5;3;1;67;18;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;Scheduled;Yes;No;No;Medium;Moderate
+P015;13/03/2026;74;F;Diabetes;6;6;5;3;1;67;17;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;Scheduled;Yes;No;No;Medium;Moderate
+P015;14/03/2026;74;F;Diabetes;6;7;6;3;1;68;16;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;In Progress;Yes;No;No;Medium;Moderate
+P015;15/03/2026;74;F;Diabetes;7;7;6;3;1;68;15;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;In Progress;Yes;No;No;Medium;Moderate
+P015;16/03/2026;74;F;Diabetes;7;7;6;3;1;69;14;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;Scheduled;Yes;No;No;Medium;Moderate
+P015;17/03/2026;74;F;Diabetes;7;7;6;3;1;69;13;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;Scheduled;Yes;No;No;Medium;Moderate
+P015;18/03/2026;74;F;Diabetes;7;7;6;3;1;69;12;Government;Yes;Dr. Lee;Yes;Medium;North;Central Hospital;Scheduled;Yes;No;No;Medium;Moderate
+P016;12/03/2026;56;M;Liver Disease;8;8;7;2;2;71;16;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;No;Low;Critical
+P016;13/03/2026;56;M;Liver Disease;8;8;7;2;2;71;15;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;No;Low;Critical
+P016;14/03/2026;56;M;Liver Disease;8;8;7;2;2;72;14;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;In Progress;Yes;Yes;No;Low;Critical
+P016;15/03/2026;56;M;Liver Disease;8;8;7;2;2;72;13;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;In Progress;Yes;Yes;No;Low;Critical
+P016;16/03/2026;56;M;Liver Disease;8;8;7;2;2;73;12;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;No;Low;Critical
+P016;17/03/2026;56;M;Liver Disease;8;8;7;2;2;73;11;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;No;Low;Critical
+P016;18/03/2026;56;M;Liver Disease;8;8;7;2;2;73;10;Private;Yes;Dr. Smith;Yes;High;West;General Hospital;Admitted;Yes;Yes;No;Low;Critical
+P017;12/03/2026;31;F;Skin Infection;3;4;3;0;0;88;34;Insurance;No;Dr. Patel;No;Low;East;East Medical Center;Scheduled;Yes;No;No;High;Stable
+P017;13/03/2026;31;F;Skin Infection;3;4;3;0;0;88;33;Insurance;No;Dr. Patel;No;Low;East;East Medical Center;In Progress;Yes;No;No;High;Stable
+P017;14/03/2026;31;F;Skin Infection;3;4;3;0;0;89;32;Insurance;No;Dr. Patel;No;Low;East;East Medical Center;In Progress;Yes;No;No;High;Stable
+P017;15/03/2026;31;F;Skin Infection;3;4;3;0;0;89;31;Insurance;No;Dr. Patel;No;Low;East;East Medical Center;Completed;Yes;No;No;High;Stable
+P017;16/03/2026;31;F;Skin Infection;3;4;3;0;0;90;30;Insurance;No;Dr. Patel;No;Low;East;East Medical Center;Completed;Yes;No;No;High;Stable
+P017;17/03/2026;31;F;Skin Infection;3;4;3;0;0;90;29;Insurance;No;Dr. Patel;No;Low;East;East Medical Center;In Progress;Yes;No;No;High;Stable
+P017;18/03/2026;31;F;Skin Infection;3;4;3;0;0;90;28;Insurance;No;Dr. Patel;No;Low;East;East Medical Center;In Progress;Yes;No;No;High;Stable
+P018;12/03/2026;64;M;Hypertension;5;6;5;2;1;74;22;Government;Yes;Dr. Garcia;Yes;Medium;South;General Hospital;Scheduled;No;No;No;Medium;Moderate
+P018;13/03/2026;64;M;Hypertension;5;6;5;2;1;74;21;Government;Yes;Dr. Garcia;Yes;Medium;South;General Hospital;Scheduled;No;No;No;Medium;Moderate
+P018;14/03/2026;64;M;Hypertension;5;6;5;2;1;75;20;Government;Yes;Dr. Garcia;Yes;Medium;South;General Hospital;In Progress;No;No;No;Medium;Moderate
+P018;15/03/2026;64;M;Hypertension;5;6;5;2;1;75;19;Government;Yes;Dr. Garcia;Yes;Medium;South;General Hospital;In Progress;No;No;No;Medium;Moderate
+P018;16/03/2026;64;M;Hypertension;5;6;5;2;1;76;18;Government;Yes;Dr. Garcia;Yes;Medium;South;General Hospital;Scheduled;No;No;No;Medium;Moderate
+P018;17/03/2026;64;M;Hypertension;5;6;5;2;1;76;17;Government;Yes;Dr. Garcia;Yes;Medium;South;General Hospital;Scheduled;No;No;No;Medium;Moderate
+P018;18/03/2026;64;M;Hypertension;5;6;5;2;1;76;16;Government;Yes;Dr. Garcia;Yes;Medium;South;General Hospital;Scheduled;No;No;No;Medium;Moderate
+P019;12/03/2026;83;F;Dementia;7;8;7;4;2;58;17;Private;Yes;Dr. Brown;Yes;High;North;Geriatric Center;Admitted;Yes;Yes;No;Low;Critical
+P019;13/03/2026;83;F;Dementia;7;8;7;4;2;58;16;Private;Yes;Dr. Brown;Yes;High;North;Geriatric Center;Admitted;Yes;Yes;No;Low;Critical
+P019;14/03/2026;83;F;Dementia;7;8;7;4;2;59;15;Private;Yes;Dr. Brown;Yes;High;North;Geriatric Center;In Progress;Yes;Yes;No;Low;Critical
+P019;15/03/2026;83;F;Dementia;7;8;7;4;2;59;14;Private;Yes;Dr. Brown;Yes;High;North;Geriatric Center;In Progress;Yes;Yes;No;Low;Critical
+P019;16/03/2026;83;F;Dementia;7;8;7;4;2;60;13;Private;Yes;Dr. Brown;Yes;High;North;Geriatric Center;Admitted;Yes;Yes;No;Low;Critical
+P019;17/03/2026;83;F;Dementia;7;8;7;4;2;60;12;Private;Yes;Dr. Brown;Yes;High;North;Geriatric Center;Admitted;Yes;Yes;No;Low;Critical
+P019;18/03/2026;83;F;Dementia;7;8;7;4;2;60;11;Private;Yes;Dr. Brown;Yes;High;North;Geriatric Center;Admitted;Yes;Yes;No;Low;Critical
+P020;12/03/2026;47;M;Back Pain;2;2;1;0;0;92;51;Self-Pay;No;Dr. Adams;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P020;13/03/2026;47;M;Back Pain;2;2;1;0;0;92;50;Self-Pay;No;Dr. Adams;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P020;14/03/2026;47;M;Back Pain;2;2;1;0;0;93;49;Self-Pay;No;Dr. Adams;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P020;15/03/2026;47;M;Back Pain;2;2;1;0;0;93;48;Self-Pay;No;Dr. Adams;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P020;16/03/2026;47;M;Back Pain;2;2;1;0;0;94;47;Self-Pay;No;Dr. Adams;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P020;17/03/2026;47;M;Back Pain;2;2;1;0;0;94;46;Self-Pay;No;Dr. Adams;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+P020;18/03/2026;47;M;Back Pain;2;2;1;0;0;94;45;Self-Pay;No;Dr. Adams;No;Low;West;West Clinic;Completed;No;No;No;High;Stable
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
