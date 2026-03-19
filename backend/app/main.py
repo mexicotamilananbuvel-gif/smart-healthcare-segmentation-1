@@ -3,6 +3,7 @@ from pydantic import BaseModel
 from typing import List, Optional, Dict, Any
 import pandas as pd
 import httpx
+import math
 from pathlib import Path
 
 app = FastAPI(title="Backend Service")
@@ -11,9 +12,48 @@ DATA_PATH = Path(__file__).resolve().parent / "patients.csv"
 LLM_SERVICE_URL = "http://llm-service:8001"
 
 def load_data() -> pd.DataFrame:
-    df = pd.read_csv(DATA_PATH)
-    df["Record_Date"] = pd.to_datetime(df["Record_Date"])
+    df = pd.read_csv(DATA_PATH, sep=";")
+
+    # Normalize column names
+    df.columns = [col.strip() for col in df.columns]
+
+    # Optional mapping for alternate date column names
+    if "Record_Date" not in df.columns:
+        if "record_date" in df.columns:
+            df.rename(columns={"record_date": "Record_Date"}, inplace=True)
+        elif "Date" in df.columns:
+            df.rename(columns={"Date": "Record_Date"}, inplace=True)
+        elif "RecordDate" in df.columns:
+            df.rename(columns={"RecordDate": "Record_Date"}, inplace=True)
+
+    if "Record_Date" not in df.columns:
+        raise ValueError(f"Record_Date column not found. Available columns: {list(df.columns)}")
+
+    df["Record_Date"] = pd.to_datetime(df["Record_Date"], dayfirst=True)
     return df
+
+def clean_records(df: pd.DataFrame):
+    cleaned = df.copy()
+
+    for col in cleaned.columns:
+        if pd.api.types.is_datetime64_any_dtype(cleaned[col]):
+            cleaned[col] = cleaned[col].dt.strftime("%Y-%m-%d")
+
+    records = cleaned.to_dict(orient="records")
+
+    safe_records = []
+    for row in records:
+        safe_row = {}
+        for key, value in row.items():
+            if isinstance(value, float) and math.isnan(value):
+                safe_row[key] = None
+            elif pd.isna(value):
+                safe_row[key] = None
+            else:
+                safe_row[key] = value
+        safe_records.append(safe_row)
+
+    return safe_records
 
 def classify_row(row: pd.Series) -> str:
     if str(row.get("ICU_Required", "No")) == "Yes":
@@ -46,7 +86,7 @@ def health():
 @app.get("/patients")
 def get_patients():
     df = load_data()
-    return df.to_dict(orient="records")
+    return clean_records(df)
 
 @app.get("/patients/latest")
 def get_latest_patients():
