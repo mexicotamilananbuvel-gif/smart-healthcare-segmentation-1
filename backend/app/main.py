@@ -155,10 +155,18 @@ async def dashboard_summary():
         "region_counts": region_counts,
         "critical_patients": critical_patients[:10]
     }
-
-    async with httpx.AsyncClient(timeout=30.0) as client:
-        response = await client.post(f"{LLM_SERVICE_URL}/dashboard-response", json=payload)
-        llm_data = response.json()
+    
+    try:
+        async with httpx.AsyncClient(timeout=30.0, verify=False) as client:
+            response = await client.post(f"{LLM_SERVICE_URL}/dashboard-response", json=payload)
+            response.raise_for_status()
+            llm_data = response.json()
+    except httpx.HTTPStatusError as e:
+        print("HTTP error:", e.response.status_code, e.response.text)
+        raise
+    except httpx.RequestError as e:
+        print("Request error:", str(e))
+        raise
 
     return {
         "data": payload,
@@ -179,7 +187,7 @@ async def critical_patients_action():
 
     records = subset.to_dict(orient="records")
 
-    async with httpx.AsyncClient(timeout=30.0) as client:
+    async with httpx.AsyncClient(timeout=30.0, verify=False) as client:
         response = await client.post(
             f"{LLM_SERVICE_URL}/summarize",
             json={"action": "critical_patients", "records": records}
@@ -208,7 +216,7 @@ async def discharge_candidates_action():
 
     records = subset.to_dict(orient="records")
 
-    async with httpx.AsyncClient(timeout=30.0) as client:
+    async with httpx.AsyncClient(timeout=30.0, verify=False) as client:
         response = await client.post(
             f"{LLM_SERVICE_URL}/recommend",
             json={"action": "discharge_candidates", "records": records}
@@ -234,7 +242,7 @@ async def ask_assistant(payload: AskRequest):
 
     records = latest.to_dict(orient="records")
 
-    async with httpx.AsyncClient(timeout=30.0) as client:
+    async with httpx.AsyncClient(timeout=30.0, verify=False) as client:
         response = await client.post(
             f"{LLM_SERVICE_URL}/summarize",
             json={
