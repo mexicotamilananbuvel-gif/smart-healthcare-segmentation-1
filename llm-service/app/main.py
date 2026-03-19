@@ -1,17 +1,21 @@
 import os
 import json
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List, Dict, Any, Optional
+from google import genai
 
 app = FastAPI(title="LLM Service")
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "AQ.Ab8RN6IUu38n0YfKf3eRtcESsq9uipNZerF987Lm533-ZirfYA")
+client = genai.Client(api_key=GEMINI_API_KEY) if GEMINI_API_KEY else None
+
 
 class LLMRequest(BaseModel):
     action: Optional[str] = None
     question: Optional[str] = None
     records: List[Dict[str, Any]] = []
+
 
 class DashboardRequest(BaseModel):
     record_date: str
@@ -19,104 +23,170 @@ class DashboardRequest(BaseModel):
     region_counts: List[Dict[str, Any]]
     critical_patients: List[Dict[str, Any]]
 
+
+SYSTEM_PROMPT = """
+You are a healthcare operations assistant.
+
+Rules:
+- Use only the provided structured data.
+- Do not diagnose.
+- Do not prescribe treatment.
+- Focus on triage operations, ICU allocation, monitoring, discharge planning, and resource allocation.
+- Return valid JSON only.
+- No markdown.
+- No text outside JSON.
+"""
+
+
+def build_prompt(action: str, data: Dict[str, Any], schema: Dict[str, Any]) -> str:
+    return f"""
+{SYSTEM_PROMPT}
+
+Action:
+{action}
+
+Input Data:
+{json.dumps(data, indent=2)}
+
+Return only valid JSON in this schema:
+{json.dumps(schema, indent=2)}
+"""
+
+
+def call_gemini(action: str, data: Dict[str, Any], schema: Dict[str, Any]) -> Dict[str, Any]:
+    if not client:
+        raise HTTPException(status_code=500, detail="GEMINI_API_KEY is missing")
+
+    prompt = build_prompt(action, data, schema)
+
+    response = client.models.generate_content(
+        model="gemini-1.5-flash",
+        contents=prompt,
+    )
+
+    text = response.text.strip()
+
+    # remove markdown fences if model adds them
+    if text.startswith("```json"):
+        text = text.replace("```json", "", 1).strip()
+    if text.startswith("```"):
+        text = text.replace("```", "", 1).strip()
+    if text.endswith("```"):
+        text = text[:-3].strip()
+
+    try:
+        return json.loads(text)
+    except json.JSONDecodeError:
+        raise HTTPException(status_code=500, detail=f"Invalid JSON from model: {text}")
+
+
 @app.get("/health")
 def health():
-    return {"status": "ok"}
+    return {"status": "ok", "gemini_configured": bool(GEMINI_API_KEY)}
 
-def fake_llm_response(action: str, records: List[Dict[str, Any]], question: Optional[str] = None):
-    if action == "critical_patients":
-        return {
-            "summary": f"There are {len(records)} patients requiring immediate attention.",
-            "recommendations": [
-                "Prioritize ICU and bed allocation.",
-                "Notify senior physicians for urgent review.",
-                "Monitor critical patients continuously."
-            ],
-            "alerts": [
-                {
-                    "patient_id": r.get("Patient_ID"),
-                    "message": f"{r.get('Primary_Condition')} requires urgent attention.",
-                    "severity": "high"
-                }
-                for r in records[:5]
-            ]
-        }
-
-    if action == "discharge_candidates":
-        return {
-            "summary": f"There are {len(records)} likely discharge candidates based on stable status and no pending lab or ICU needs.",
-            "recommendations": [
-                "Review discharge checklist.",
-                "Confirm follow-up schedule.",
-                "Prepare patient discharge summary."
-            ],
-            "alerts": []
-        }
-
-    if action == "manager_question":
-        return {
-            "summary": f"Answer for question: {question}",
-            "recommendations": [
-                "Use filtered data for operational decision-making."
-            ],
-            "alerts": []
-        }
-
-    return {
-        "summary": "No summary available.",
-        "recommendations": [],
-        "alerts": []
-    }
 
 @app.post("/summarize")
 def summarize(payload: LLMRequest):
-    return fake_llm_response(payload.action or "unknown", payload.records, payload.question)
+    schema = {
+        "summary": "string",
+        "recommendations": ["string"],
+        "alerts": [
+            {
+                "patient_id": "string",
+                "message": "string",
+                "severity": "low | medium | high"
+            }
+        ]
+    }
+
+    data = {
+        "action": payload.action,
+        "question": payload.question,
+        "records": payload.records
+    }
+
+    return call_gemini(payload.action or "summarize", data, schema)
+
 
 @app.post("/recommend")
 def recommend(payload: LLMRequest):
-    return fake_llm_response(payload.action or "unknown", payload.records, payload.question)
+    schema = {
+        "summary": "string",
+        "recommendations": ["string"],
+        "alerts": []
+    }
+
+    data = {
+        "action": payload.action,
+        "question": payload.question,
+        "records": payload.records
+    }
+
+    return call_gemini(payload.action or "recommend", data, schema)
+
 
 @app.post("/explain")
 def explain(payload: LLMRequest):
-    return fake_llm_response(payload.action or "unknown", payload.records, payload.question)
+    schema = {
+        "summary": "string",
+        "recommendations": ["string"],
+        "alerts": [
+            {
+                "patient_id": "string",
+                "message": "string",
+                "severity": "low | medium | high"
+            }
+        ]
+    }
+
+    data = {
+        "action": payload.action,
+        "question": payload.question,
+        "records": payload.records
+    }
+
+    return call_gemini(payload.action or "explain", data, schema)
+
 
 @app.post("/dashboard-response")
 def dashboard_response(payload: DashboardRequest):
-    return {
-        "page_title": f"Patient Dashboard - {payload.record_date}",
-        "summary": (
-            f"Total patients: {payload.kpis['total_patients']}. "
-            f"Critical: {payload.kpis['critical']}, "
-            f"Moderate: {payload.kpis['moderate']}, "
-            f"Stable: {payload.kpis['stable']}."
-        ),
+    schema = {
+        "page_title": "string",
+        "summary": "string",
         "kpis": [
-            {"label": "Total Patients", "value": payload.kpis["total_patients"]},
-            {"label": "Critical", "value": payload.kpis["critical"]},
-            {"label": "Moderate", "value": payload.kpis["moderate"]},
-            {"label": "Stable", "value": payload.kpis["stable"]},
+            {"label": "string", "value": 0}
         ],
         "alerts": [
+            {"patient_id": "string", "message": "string", "severity": "low | medium | high"}
+        ],
+        "patients": [
             {
-                "patient_id": p["Patient_ID"],
-                "message": f"{p['Primary_Condition']} patient in {p['Hospital_Branch']} needs urgent attention.",
-                "severity": "high"
+                "patient_id": "string",
+                "condition": "string",
+                "priority_group": "Critical | Moderate | Stable",
+                "severity_score": 0,
+                "icu_required": "Yes | No",
+                "branch": "string",
+                "region": "string"
             }
-            for p in payload.critical_patients[:5]
         ],
         "charts": [
             {
                 "chart_type": "bar",
-                "title": "Patients by Region",
+                "title": "string",
                 "data": [
-                    {"label": x["Region"], "value": x["count"]}
-                    for x in payload.region_counts
+                    {"label": "string", "value": 0}
                 ]
             }
         ],
-        "recommendations": [
-            "Review critical patient queue first.",
-            "Verify ICU and bed capacity by branch.",
-            "Track moderate cases for any worsening trend."
-        ]
+        "recommendations": ["string"]
     }
+
+    data = {
+        "record_date": payload.record_date,
+        "kpis": payload.kpis,
+        "region_counts": payload.region_counts,
+        "critical_patients": payload.critical_patients
+    }
+
+    return call_gemini("dashboard_response", data, schema)
