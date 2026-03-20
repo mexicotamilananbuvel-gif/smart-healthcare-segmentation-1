@@ -1,0 +1,7 @@
+Login Page — Full authentication with email/password form, error handling, loading states, and quick-access demo buttons for all 3 roles. Users: admin@vitaltriage.com/admin123, manager@vitaltriage.com/manager123, clinician@vitaltriage.com/doctor123
+
+https://id-preview--d7c5b908-56b5-416d-be2f-7fd1825b88b3.lovable.app/
+
+https://github.com/Debayan465/triage-insights-hub
+
+https://github.com/Debayan465/triage-insights-hub.git

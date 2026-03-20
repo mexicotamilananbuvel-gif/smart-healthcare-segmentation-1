@@ -173,6 +173,40 @@ async def dashboard_summary():
         "llm": llm_data
     }
 
+@app.get("/dashboard/patient-trends")
+def dashboard_patient_trends():
+    df = load_data()
+    # Ensure Priority_Group column exists
+    if "Priority_Group" not in df.columns:
+        df["Priority_Group"] = df.apply(classify_row, axis=1)
+
+    # Latest date patient counts
+    latest_date = df["Record_Date"].max()
+    latest = df[df["Record_Date"] == latest_date].copy()
+    group_counts = (
+        latest["Priority_Group"].value_counts().to_dict()
+    )
+    total_patients = int(latest["Patient_ID"].nunique())
+
+    # Patient trend over time
+    trend = (
+        df.groupby(["Record_Date", "Priority_Group"])["Patient_ID"]
+        .count()
+        .reset_index()
+        .pivot(index="Record_Date", columns="Priority_Group", values="Patient_ID")
+        .fillna(0)
+        .astype(int)
+    )
+    trend["Total"] = trend.sum(axis=1)
+    trend_data = trend.reset_index().to_dict(orient="records")
+
+    return {
+        "latest_date": str(latest_date.date()),
+        "latest_counts": group_counts,
+        "total_patients": total_patients,
+        "trend": trend_data
+    }
+
 @app.post("/actions/critical-patients")
 async def critical_patients_action():
     df = load_data()
