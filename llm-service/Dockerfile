@@ -9,7 +9,7 @@ RUN python -m pip install --no-cache-dir --upgrade pip setuptools wheel \
     --trusted-host pypi.org \
     --trusted-host files.pythonhosted.org
 
-RUN python -m pip install fastapi uvicorn pydantic pandas python-multipart httpx google-genai --no-cache-dir  \
+RUN python -m pip install fastapi uvicorn pydantic pandas python-multipart httpx google-genai langchain_openai --no-cache-dir  \
     --trusted-host pypi.org \
     --trusted-host files.pythonhosted.org
 

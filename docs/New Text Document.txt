@@ -1,0 +1,36 @@
+https://github.com/JeyaprabhuP/smart-patient-segmentation
+
+docker-compose up --build
+
+
+1. Archtitecture diagram
+
+2. Design document
+
+3. Code quality 
+
+4.Result & Business
+
+5. What we can leverage from this or extend the business use-cas
+
+
++--------------------+           +------------------+            +-------------------+
+|                    |           |                  |            |                   |
+|   Frontend         | <-------> |  FastAPI Backend | <------->  |   Database / CSV  |
+| (React.js Dashboard)|  REST API |  Endpoints:     |   SQL/JSON |   Patient Records |
+|  - KPIs            |           |  /dashboard      |            |                   |
+|  - Alerts          |           |  /summarize      |            +-------------------+
+|  - Charts          |           |  /recommend      |
+|  - Patient Table   |           |  /explain        |
++--------------------+           +------------------+
+                                     |
+                                     |
+                                     v
+                           +--------------------+
+                           |                    |
+                           |  AI / LLM Service  |
+                           |  Google Gemini     |
+                           |  - Classify patients|
+                           |  - Generate JSON   |
+                           |  - Recommendations |
+                           +--------------------+

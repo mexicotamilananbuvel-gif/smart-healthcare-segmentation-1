@@ -10,14 +10,21 @@ function App() {
   const [dashboard, setDashboard] = useState(null);
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState(null);
+  const [trend, setTrend] = useState(null);
 
   useEffect(() => {
     loadDashboard();
+    loadTrend();
   }, []);
 
   const loadDashboard = async () => {
     const res = await axios.get(`${API_URL}/dashboard/summary`);
     setDashboard(res.data);
+  };
+
+  const loadTrend = async () => {
+    const res = await axios.get(`${API_URL}/dashboard/patient-trends`);
+    setTrend(res.data);
   };
 
   const askAssistant = async () => {
@@ -50,6 +57,25 @@ function App() {
           </div>
         ))}
       </div>
+
+      {/* Patient Trend Chart */}
+      {trend && (
+        <div style={{ width: "100%", height: 350, marginBottom: 24 }}>
+          <h2>Patient Trend Over Time</h2>
+          <ResponsiveContainer>
+            <BarChart data={trend.trend}>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis dataKey="Record_Date" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="Critical" fill="#e74c3c" />
+              <Bar dataKey="Moderate" fill="#f1c40f" />
+              <Bar dataKey="Stable" fill="#2ecc71" />
+              <Bar dataKey="Total" fill="#3498db" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      )}
 
       <div style={{ width: "100%", height: 300, marginBottom: 24 }}>
         <h2>Patients by Region</h2>
